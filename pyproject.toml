@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "geekcamp-calculator"
+version = "0.0.1.0"
+description = ""
+authors = ["FifiLyu <fifilyu@gmail.com>"]
+readme = "README.md"
+
+packages = [
+    { include = "calculator" },
+    { include = "gkcalculator.py" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8.5 <4.0.0"
+antlr4-tools = ">=0.2"
+antlr4-python3-runtime = ">=4.13.1"
+pytest = ">=7.4.1"
+
+[tool.poetry.scripts]
+pycalculator = "gkcalculator:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
