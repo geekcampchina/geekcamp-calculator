@@ -7,14 +7,8 @@
 ```bash
 poetry install
 
-poetry shell
-
-which antlr4
-
-antlr4 -Xexact-output-dir -o calculator/antlr4 -Dlanguage=Python3 calculator/grammar/CalculatorLexer.g4
-antlr4 -Xexact-output-dir -o calculator/antlr4 -listener -visitor -Dlanguage=Python3 calculator/grammar/CalculatorParser.g4 calculator/grammar/CalculatorLexer.g4
-
-exit
+poetry run antlr4 -Xexact-output-dir -o calculator/antlr4 -Dlanguage=Python3 calculator/grammar/CalculatorLexer.g4
+poetry run antlr4 -Xexact-output-dir -o calculator/antlr4 -listener -visitor -Dlanguage=Python3 calculator/grammar/CalculatorParser.g4 calculator/grammar/CalculatorLexer.g4
 ```
 
 ## 单元测试
