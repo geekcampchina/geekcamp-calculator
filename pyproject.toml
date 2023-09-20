@@ -10,6 +10,14 @@ packages = [
     { include = "gkcalculator.py" },
 ]
 
+include = [
+    "calculator/antlr4/*.py"
+]
+
+exclude = [
+    "calculator/antlr4/.gitkeep"
+]
+
 [tool.poetry.dependencies]
 python = ">=3.8.5 <4.0.0"
 antlr4-tools = ">=0.2"
