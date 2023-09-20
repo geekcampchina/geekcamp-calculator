@@ -1,9 +1,20 @@
 [tool.poetry]
 name = "geekcamp-calculator"
-version = "0.0.1.0"
-description = ""
+version = "0.0.1.2"
+description = "基于 ANTLR4 编写的 Python 计算器 DEMO"
 authors = ["FifiLyu <fifilyu@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/geekcampchina/geekcamp-calculator"
+repository = "https://github.com/geekcampchina/geekcamp-calculator"
+documentation = "https://github.com/geekcampchina/geekcamp-calculator"
+
+classifiers = [
+    'Intended Audience :: Developers',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Topic :: System :: System Shells'
+]
 
 packages = [
     { include = "calculator" },
