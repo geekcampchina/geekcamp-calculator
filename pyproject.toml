@@ -15,7 +15,7 @@ python = ">=3.8.5 <4.0.0"
 antlr4-tools = ">=0.2"
 antlr4-python3-runtime = ">=4.13.1"
 pytest = ">=7.4.1"
-happy-python = "^0.4.7"
+happy-python = ">=0.4.7"
 
 [tool.poetry.scripts]
 pycalculator = "gkcalculator:main"
