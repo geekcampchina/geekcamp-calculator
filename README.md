@@ -1,15 +1,22 @@
 # geekcamp-calculator
 
-基于ANTLR4编写的Python计算器DEMO
+基于 ANTLR4 编写的 Python 计算器 DEMO
 
 ## 环境准备
 
 ```bash
 poetry install
 
+poetry shell
+
+which antlr4
+
 antlr4 -Xexact-output-dir -o calculator/antlr4 -Dlanguage=Python3 calculator/grammar/CalculatorLexer.g4
 antlr4 -Xexact-output-dir -o calculator/antlr4 -listener -visitor -Dlanguage=Python3 calculator/grammar/CalculatorParser.g4 calculator/grammar/CalculatorLexer.g4
+
+exit
 ```
+
 ## 单元测试
 
 ```bash
@@ -23,7 +30,7 @@ poetry build -f wheel
 pip install -U --user dist/geekcamp_calculator-*-py3-none-any.whl
 ```
 
-列出Python包文件列表：
+列出 Python 包文件列表：
 
 ```bash
 pip show geekcamp-calculator -f
@@ -33,14 +40,14 @@ pip show geekcamp-calculator -f
 
     Name: geekcamp-calculator
     Version: 0.0.1.0
-    Summary: 
-    Home-page: 
+    Summary:
+    Home-page:
     Author: FifiLyu
     Author-email: fifilyu@gmail.com
-    License: 
+    License:
     Location: /home/user/.local/lib/python3.11/site-packages
     Requires: antlr4-python3-runtime, antlr4-tools, pytest
-    Required-by: 
+    Required-by:
     Files:
       ../../../bin/pycalculator
       __pycache__/gkcalculator.cpython-311.pyc
@@ -85,8 +92,7 @@ pip show geekcamp-calculator -f
 获取命令行工具执行路径：
 
 ```bash
-pycalculator_bin=$(pip show geekcamp-calculator -f | grep -E 'Location|bin/pycalculator'|awk '{print $NF}' | tr '\n' '/' | sed 's#/$##')
-realpath ${pycalculator_bin}
+python -c "import site; print('%s/bin/pycalculator' % site.USER_BASE)"
 ```
 
 终端输出：
@@ -106,8 +112,8 @@ realpath ${pycalculator_bin}
     2023-09-20 00:36:09 94943 [INFO] 未启用日志配置文件，加载默认设置
     请输入表达式： 1+1==2;
     2023-09-20 00:36:13 94943 [INFO] 语法识别：
-    
+
         1+1==2;
-    
-    
+
+
     2023-09-20 00:36:13 94943 [DEBUG] Calculator.Antlr4->语法分析成功
